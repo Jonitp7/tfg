@@ -1,0 +1,147 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h3, div, label, input, button, p {
+    margin: 10px 0;
+    padding: 0;
+}
+
+/* Button styles */
+button {
+    background-color: #33336C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #5353A6;
+}
+
+/* Card styles */
+.card-solicitud,
+.vivienda-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+img {
+    max-width: 25%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-solicitud:hover,
+.vivienda-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Section styles */
+#solicitudes,
+#divSubastas,
+#mis-viviendas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Message styles */
+.mensaje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #ff6347;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px dashed #ff6347;
+    border-radius: 8px;
+    background-color: #fff5f5;
+}
+
+.mensajeOk {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #28a745; /* Verde oscuro */
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px dashed #28a745; /* Verde oscuro */
+    border-radius: 8px;
+    background-color: #e8f5e9; /* Verde claro */
+}
+
+/* Specific section styles */
+.divSubasta {
+    width: 90%;
+    display: flex;
+    border: 1px solid #33336C;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.divSubasta:hover {
+    cursor: pointer;
+    background-color: rgb(204, 203, 231);
+}
+
+.divBotones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}

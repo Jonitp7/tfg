@@ -1,0 +1,75 @@
+@if (isLoggedIn) {
+    <div class="welcome-message">
+        <h1>¡Bienvenido {{usuario?.nombre}}!</h1>
+    </div>
+}
+<div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-image" style="background-image: url('/assets/img/foto1-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto2-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto3-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto4-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto5-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto6-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto7-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto8-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto9-1.jpg');"></div>
+            <div class="carousel-image" style="background-image: url('/assets/img/foto10-1.jpg');"></div>
+        </div>
+</div>
+
+
+<section class="introduction">
+    <h2>Descubre el Lujo</h2>
+    <p>Bienvenido a nuestra plataforma de alquiler vacacional y subasta de viviendas de lujo. Nos dedicamos a ofrecer las mejores propiedades para tus vacaciones y oportunidades únicas en subastas de viviendas exclusivas.</p>
+</section>
+
+<section class="services">
+    <div class="service">
+        <img src="../../../assets/img/rental.svg" alt="Alquiler Vacacional">
+        <h2>Alquiler Vacacional</h2>
+        <p>Encuentra las mejores propiedades de lujo para tus vacaciones. Disfruta de un servicio excepcional y valoraciones de otros huéspedes.</p>
+    </div>
+    <div class="service">
+        <img src="../../../assets/img/subasta.svg" alt="Subasta de Viviendas">
+        <h2>Subasta de Viviendas</h2>
+        <p>Participa en nuestras subastas y consigue tu hogar ideal. Revisa las últimas pujas y puja por las mejores viviendas.</p>
+    </div>
+    <div class="service">
+        <img src="../../../assets/img/register.svg" alt="Registrar Propiedad">
+        <h2>Registra tu Propiedad</h2>
+        <p>Conviértete en propietario y alquila tu vivienda con nosotros. Nuestro algoritmo garantiza el máximo rendimiento de tu propiedad.</p>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <img src="../../../assets/img/check.svg" alt="Verificación de Viviendas">
+        <h3>Verificación de Viviendas</h3>
+        <p>Aseguramos que todas las viviendas registradas cumplen con nuestros estándares de calidad.</p>
+    </div>
+    <div class="feature">
+        <img src="../../../assets/img/favorites.svg" alt="Favoritos">
+        <h3>Favoritos</h3>
+        <p>Agrega tus propiedades favoritas para no perderlas de vista y encontrarlas fácilmente.</p>
+    </div>
+    <div class="feature">
+        <img src="../../../assets/img/filters.svg" alt="Búsqueda con Filtros">
+        <h3>Búsqueda con Filtros</h3>
+        <p>Encuentra la vivienda perfecta con nuestros filtros avanzados que se adaptan a tus necesidades.</p>
+    </div>
+    <div class="feature">
+        <img src="../../../assets/img/opinion.svg" alt="Opiniones">
+        <h3>Opiniones</h3>
+        <p>Revisa las opiniones de otros huéspedes y propietarios para tomar decisiones informadas.</p>
+    </div>
+</section>
+
+@if (!isLoggedIn) {
+    <section class="call-to-action">
+        <h2>Únete a Nosotros</h2>
+        <p>Regístrate ahora y comienza a disfrutar de todos los beneficios de nuestra plataforma.</p>
+        <button onclick="location.href='/register'">Registrarse</button>
+    </section>
+}
+

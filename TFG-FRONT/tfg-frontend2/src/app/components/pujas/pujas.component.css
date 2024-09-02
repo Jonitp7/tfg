@@ -1,0 +1,65 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilos para la tarjeta de puja */
+.card-puja {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-puja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.card-puja h3 {
+    color: #333;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.card-puja h3:first-child {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.card-puja h3:last-child {
+    color: #555;
+    font-style: italic;
+}
+
+/* Añadir animación a los elementos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card-puja {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Estilos para el contenedor */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

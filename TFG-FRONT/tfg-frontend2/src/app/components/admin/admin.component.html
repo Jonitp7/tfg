@@ -1,0 +1,113 @@
+<div class="divBotones">
+    <button (click)="cambiarOpcion(1)" type="button" class="btn btn-primary">Solicitudes de registro</button>
+    <button (click)="cambiarOpcion(2)" type="button" class="btn btn-primary">Registrar vivienda</button>
+    <button (click)="cambiarOpcion(3)" type="button" class="btn btn-primary">Mis viviendas</button>
+</div>
+
+@if (opcionElegida == 1) {
+    <div id="solicitudes">
+        @for (solicitud of solicitudes; track $index) {
+            <div class="card-solicitud" (click)="verDetalleSolicitud(solicitud.idSolicitud)">
+                <div>Id solicitud: {{solicitud.idSolicitud}}</div>
+                <div>Estado solicitud: {{solicitud.estadoSolicitud}}</div>
+                <div>Nombre solicitante: {{solicitud.usuario.nombre}}</div>
+            </div>
+        }
+    </div>
+}
+
+@if (opcionElegida == 2) {
+    <form (ngSubmit)="registrarVivienda()">
+        <label for="fechaConstruccion">Fecha Construcción:</label>
+        <input [(ngModel)]="fechaConstruccion" name="fechaConstruccion" type="date" placeholder="Fecha Construcción" required />
+        <input [(ngModel)]="aseoHabitacion" name="aseoHabitacion" type="number" placeholder="Aseos en Habitación" required />
+        <input [(ngModel)]="aseos" name="aseos" type="number" placeholder="Aseos" required />
+        <input [(ngModel)]="descripcion" type="text" name="descripcion" placeholder="Descripción" required />
+        <input [(ngModel)]="extension" type="text" name="extension" placeholder="Extensión (m2)" required />
+        <input [(ngModel)]="habitaciones" name="habitaciones" type="number" placeholder="Habitaciones" required />
+        <input [(ngModel)]="plantas" name="plantas" type="number" placeholder="Plantas" required />
+        <div id="divChecks">
+            <div class="divCheck">
+                <label for="garaje">Garaje:</label>
+                <input [(ngModel)]="garaje" name="garaje" type="checkbox" />
+            </div>
+            <div class="divCheck">
+                <label for="golf">Golf:</label>
+                <input [(ngModel)]="golf" name="golf" type="checkbox" />
+            </div>
+            <div class="divCheck">
+                <label for="jardin">Jardín:</label>
+                <input [(ngModel)]="jardin" name="jardin" type="checkbox" />
+            </div>
+            <div class="divCheck">
+                <label for="piscina">Piscina:</label>
+                <input [(ngModel)]="piscina" name="piscina" type="checkbox" />
+            </div>
+            <div class="divCheck">
+                <label for="spa">Spa:</label>
+                <input [(ngModel)]="spa" name="spa" type="checkbox" />
+            </div>
+        </div>
+
+        <input [(ngModel)]="tipoVivienda" type="text" name="tipoVivienda" placeholder="Tipo de Vivienda" required />
+        <input [(ngModel)]="ubicacion" type="text" name="ubicacion" placeholder="Ubicación" required />
+        <input [(ngModel)]="vista" type="text" name="vista" placeholder="Vista" required />
+
+        <label for="foto1">Foto 1:</label>
+        <input [(ngModel)]="foto1" name="foto1" placeholder="URL de la Foto 1" required />
+
+        <label for="foto2">Foto 2:</label>
+        <input [(ngModel)]="foto2" name="foto2" placeholder="URL de la Foto 2" required />
+
+        <label for="foto3">Foto 3:</label>
+        <input [(ngModel)]="foto3" name="foto3" placeholder="URL de la Foto 3" required />
+
+        <label for="foto4">Foto 4:</label>
+        <input [(ngModel)]="foto4" name="foto4" placeholder="URL de la Foto 4" required />
+
+        <div class="divBotones">
+            <button type="submit">Registrar Vivienda</button>
+        </div>
+    </form>
+}
+
+@if (opcionElegida == 3) {
+    <div id="mis-viviendas">
+        @for (vivienda of viviendas; track $index) {
+            <div class="vivienda-card">
+                <img src="../../../assets/img/{{vivienda.fotosVivienda.foto1}}" alt="Imagen de la vivienda">
+                <div>Id Vivienda: {{vivienda.idVivienda}}</div>
+                <div>Descripción: {{vivienda.descripcion}}</div>
+                <div>Fecha Alta: {{vivienda.fechaAltaVivienda}}</div>
+                <p>Tamaño: {{vivienda.extension}} m²</p>
+                <p>Ubicación: {{vivienda.ubicacion}}</p>
+                @if (vivienda.existenciaSubasta == 0) {
+                    <button (click)="toggleFormSubasta(vivienda.idVivienda)">Iniciar subasta</button>
+                    @if (formSubastaVisible[vivienda.idVivienda]) {
+                        <form (ngSubmit)="crearSubasta(vivienda.idVivienda)">
+                            <label for="precioInicial">Precio inicial:</label>
+                            <input [(ngModel)]="precioInicial" name="precioInicial" type="number" required>
+                            <label for="fechaFin">Fecha de fin</label>
+                            <input [(ngModel)]="fechaFin" name="fechaFin" type="date" required>
+                            <button type="submit">Crear subasta</button>
+                        </form>
+                    }
+                }
+            </div>
+        }
+    </div>
+    <div>
+        <button (click)="modalRegistro()">Añadir vivienda</button>
+    </div>
+    @if (registroVivienda) {
+
+    }
+}
+
+@if (mensaje) {
+    <h3 class="mensaje">{{mensaje}}</h3>
+}
+
+@if (mensajeOk) {
+    <h3 class="mensajeOk">{{mensajeOk}}</h3>
+}

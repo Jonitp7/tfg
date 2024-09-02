@@ -1,0 +1,16 @@
+
+@if (favoritos.length === 0) {
+    <h3 class="no-favorites-message">No tienes ningún favorito</h3>
+}
+
+<div class="favorites-container">
+    @for (favorito of favoritos; track $index) {
+        <div class="card-fav" (click)="irADetalleVivienda(favorito.vivienda.idVivienda)">
+            <img src="../../../assets/img/{{favorito.vivienda.fotosVivienda.foto1}}" alt="">
+            <p>{{favorito.vivienda.descripcion}}</p>
+            <p>Tamaño: {{favorito.vivienda.extension}} m2</p>
+            <p>Ubicación: {{favorito.vivienda.ubicacion}}</p>
+        </div>
+    }
+</div>
+

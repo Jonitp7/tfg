@@ -1,0 +1,46 @@
+<div class="datosSolicitud">
+    <p class="section-title">DATOS SOLICITUD</p>
+    <p>Id solicitud: {{solicitud?.idSolicitud}}</p>
+    <p>Fecha solicitud: {{solicitud?.fecha}}</p>
+    <p>Estado solicitud: {{solicitud?.estadoSolicitud}}</p>
+</div>
+
+<div class="datosUsuario">
+    <p class="section-title">DATOS SOLICITANTE</p>
+    <p>Usuario: {{solicitud?.usuario?.nombre}}</p>
+    <p>DNI: {{solicitud?.usuario?.dni}}</p>
+    <p>Fecha de nacimiento: {{solicitud?.usuario?.fechaNacimiento}}</p>
+    <p>Email: {{solicitud?.usuario?.email}}</p>
+    <p>Teléfono: {{solicitud?.usuario?.numeroTelefono}}</p>
+</div>
+
+<div class="datosVivienda">
+    <p class="section-title">DATOS VIVIENDA</p>
+    <div class="imgVivienda">
+        @if (solicitud && solicitud.datosVivienda && solicitud.datosVivienda.fotosVivienda) {
+            <img src="../../../assets/img/{{solicitud.datosVivienda.fotosVivienda[0]}}" alt="" class="small-img" (click)="showImageModal(solicitud.datosVivienda.fotosVivienda[0])">
+            <img src="../../../assets/img/{{solicitud.datosVivienda.fotosVivienda[1]}}" alt="" class="small-img" (click)="showImageModal(solicitud.datosVivienda.fotosVivienda[1])">
+            <img src="../../../assets/img/{{solicitud.datosVivienda.fotosVivienda[2]}}" alt="" class="small-img" (click)="showImageModal(solicitud.datosVivienda.fotosVivienda[2])">
+            <img src="../../../assets/img/{{solicitud.datosVivienda.fotosVivienda[3]}}" alt="" class="small-img" (click)="showImageModal(solicitud.datosVivienda.fotosVivienda[3])">
+        }
+    </div>
+    <p>Descripción: {{solicitud?.datosVivienda?.descripcion}}</p>
+    <p>Tamaño: {{solicitud?.datosVivienda?.extension}}</p>
+    <p>Ubicación: {{solicitud?.datosVivienda?.ubicacion}}</p>
+    <p>Tipo de vivienda: {{solicitud?.datosVivienda?.tipo_vivienda}}</p>
+    <p>Plantas: {{solicitud?.datosVivienda?.plantas}}</p>
+</div>
+
+<!-- Modal for displaying the enlarged image -->
+<div id="imageModal" class="modal">
+    <span class="close" (click)="closeImageModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+
+@if (solicitud?.estadoSolicitud != "Aceptada") {
+    <button (click)="aceptarSolicitud()">Aceptar</button>
+    <button (click)="rechazarSolicitud()">Rechazar</button>
+} @else {
+    <p class="solicitud-aceptada">SOLICITUD ACEPTADA</p>
+}

@@ -1,0 +1,37 @@
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <img src="../../../../assets/img/Luxury Mansion_transparent.png" alt="">
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a routerLink="/alquileres" class="nav-link px-2">Alquileres</a></li>
+        <li><a routerLink="/subastas" class="nav-link px-2">Subastas</a></li>
+        @if (rol=="propietario") {
+          <li><a routerLink="/registrar-vivienda" class="nav-link px-2">Registrar Vivienda</a></li>
+          <li><a routerLink="/mis-viviendas" class="nav-link px-2">Mis viviendas</a></li>
+        }
+        @if (isLoggedIn) {
+          <li><a routerLink="/favoritos" class="nav-link px-2">Favoritos</a></li>
+        }
+        <li><a routerLink="/about" class="nav-link px-2">About</a></li>
+        @if (rol=="admin") {
+          <li><a routerLink="/admin" class="nav-link px-2">ADMIN</a></li>
+        }
+      </ul>
+
+      @if (!isLoggedIn) {
+        <div class="col-md-3 text-end">
+          <button routerLink="/login" type="button" class="btn btn-outline-primary me-2">Login</button>
+          <button routerLink="/register" type="button" class="btn btn-primary">Sign-up</button>
+        </div>
+      }
+
+      @if (isLoggedIn) {
+        <a routerLink="/reservas" class="nav-link px-2">Mis reservas</a>
+        <button type="button" class="btn btn-outline-secondary me-2" (click)="logout()">Logout</button>
+      }
+
+    </header>
+  </div>

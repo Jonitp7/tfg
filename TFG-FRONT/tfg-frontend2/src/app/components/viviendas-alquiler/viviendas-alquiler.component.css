@@ -1,0 +1,279 @@
+/*.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.buscador {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 30rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form>div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="number"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+img{
+    width: 50%;
+}
+
+.contenedorViviendas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card-vivienda{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 30rem;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: .4rem;
+}
+
+.divVivienda{
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: start;
+    flex-direction: row;
+    border: 2px solid black;
+}
+
+.divVivienda>p{
+    font-size: 1rem;
+    display: flex;
+    justify-content:start;
+    align-items: start;
+    border: 2px solid black;
+
+}
+.divVivienda>.p1{
+    width: 30%;
+}
+.divVivienda>.p2{
+    width: 70%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    margin: 0 10px;
+  }*/
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .buscador {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 150px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas y los inputs */
+.form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form input[type="number"],
+.form input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form input[type="number"]:focus,
+.form input[type="checkbox"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilos específicos para los inputs de texto */
+.iptext {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form input[type="checkbox"] {
+    width: auto;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+/* Añadir animación a los elementos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.buscador,
+.form div {
+    animation: fadeIn 0.5s ease-in-out;
+}
+  
+  .contenedorViviendas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .card-vivienda {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card-vivienda:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-vivienda img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .divVivienda {
+    padding: 15px;
+  }
+  
+  .p1 {
+    font-weight: bold;
+  }
+  
+  .p2 {
+    margin: 0;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+  }
+  
+  .pagination span {
+    margin: 0 10px;
+  }
+
+  
+  

@@ -1,0 +1,31 @@
+<div id="misPujas">
+    @if (isLoggedIn) {
+        <button class="btn btn-outline-secondary me-2" (click)="misPujas()">Mis pujas</button>
+    }
+</div>
+
+<div id="subastas">
+    @if (subastas.length == 0) {
+        <div id="menNoSubastas">
+            <h3>No hay subastas disponibles</h3>
+        </div>
+    } @else {
+        <div id="divSubastas">
+            @for (subasta of subastas; track $index) {
+                <div class="divSubasta" (click)="verSubasta(subasta.idSubasta)">
+                    <div class="img">
+                        <img src="../../../assets/img/{{subasta.vivienda.fotosVivienda.foto1}}" alt="">
+                    </div>
+                    <div class="dataSubasta">
+                        <p>Id de la subasta: {{subasta.idSubasta}}</p>
+                        <p>Precio inicial: {{subasta.precioInicial}}€</p>
+                        <p>Fecha fin de subasta: {{subasta.fechaFin}}</p>
+                        <p>Ubicación de la vivienda: {{subasta.vivienda.ubicacion}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+

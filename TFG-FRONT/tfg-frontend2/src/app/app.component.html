@@ -1,0 +1,10 @@
+<div class="app-container">
+    <div class="content">
+      @if (!isLoginRoute()) {
+        <app-header></app-header>
+      }
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  

@@ -1,0 +1,50 @@
+<div class="contenedor">
+<div class="buscador">
+    <form [formGroup]="filterForm" class="form">
+    <div>
+      <label for="habitaciones">Habitaciones</label>
+      <input class="iptext" id="habitaciones" formControlName="habitaciones" type="number">
+    </div>
+    <div>
+      <label for="plantas">Plantas</label>
+      <input class="iptext" id="plantas" formControlName="plantas" type="number" min="1" max="10">
+      </div>
+      <div>
+      <label for="piscina">Piscina</label>
+      <input id="piscina" formControlName="piscina" type="checkbox">
+    </div>
+      <div>
+      <label for="spa">Spa</label>
+      <input id="spa" formControlName="spa" type="checkbox">
+    </div>
+      <div>
+      <label for="golf">Golf</label>
+      <input id="golf" formControlName="golf" type="checkbox">
+    </div>
+      <div>
+      <label for="jardin">Jardín</label>
+      <input id="jardin" formControlName="jardin" type="checkbox">
+    </div>
+    </form>
+  </div>
+  <div class="contenedorViviendas">
+@for (vivienda of filteredViviendas; track $index) {
+
+        <div (click)="verVivienda(vivienda.idVivienda)" class="card-vivienda">
+            <img src="../../../assets/img/{{vivienda.fotosVivienda.foto1}}" alt="">
+            <div class="divVivienda"><p class="p1">Descripcion: </p><p class="p2">{{vivienda.descripcion}}</p></div>
+            <div class="divVivienda"><p class="p1">Tipo de vivienda: </p><p class="p2">{{vivienda.tipoVivienda}}</p></div>
+            <div class="divVivienda"><p class="p1">Valoracion: </p><p class="p2">{{vivienda.valoracion}}</p></div>
+            <div class="divVivienda"><p class="p1">Ubicacion: </p><p class="p2">{{vivienda.ubicacion}}</p></div>
+        </div>
+
+}
+
+  </div>
+
+  <div class="pagination">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{currentPage}} de {{totalPages()}}</span>
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages()">Siguiente</button>
+  </div>
+</div>

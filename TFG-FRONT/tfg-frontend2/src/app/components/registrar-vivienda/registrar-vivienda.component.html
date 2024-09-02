@@ -1,0 +1,56 @@
+<!-- registrar-vivienda.component.html -->
+<form (ngSubmit)="register()">
+  <label for="fechaConstruccion">Fecha de construcción</label>
+  <input [(ngModel)]="fechaConstruccion" name="fechaConstruccion" type="date" placeholder="Fecha Construcción" required />
+  <input [(ngModel)]="aseoHabitacion" name="aseoHabitacion" type="number" placeholder="Aseos en Habitación" required />
+  <input [(ngModel)]="habitaciones" name="habitaciones" type="number" placeholder="Habitaciones" required />
+  <input [(ngModel)]="aseos" name="aseos" type="number" placeholder="Aseos" required />
+  <input [(ngModel)]="descripcion" name="descripcion" type="text" placeholder="Descripción" required />
+  <input [(ngModel)]="extension" name="extension" type="text" placeholder="Extensión (m2)" required />
+  <input [(ngModel)]="plantas" name="plantas" type="number" placeholder="Plantas" required />
+  <div id="divChecks">
+    <div class="divCheck">
+      <label  for="garaje">Garaje</label>
+      <input class="labelCheck" [(ngModel)]="garaje" name="garaje" type="checkbox" placeholder="Garaje"/>
+    </div>
+    <div class="divCheck">
+      <label for="golf">Golf</label> 
+      <input [(ngModel)]="golf" name="golf" type="checkbox" placeholder="Golf"/> 
+    </div>
+    <div class="divCheck">
+      <label for="jardin">Jardín</label>
+      <input [(ngModel)]="jardin" name="jardin" type="checkbox" placeholder="jardin"/>
+    </div>
+    <div class="divCheck">
+      <label for="piscina">Piscina</label> 
+      <input [(ngModel)]="piscina" name="piscina" type="checkbox" placeholder="piscina"/> 
+    </div>
+    <div class="divCheck">   
+      <label for="spa">Spa</label>
+      <input [(ngModel)]="spa" name="spa" type="checkbox" placeholder="Spa"/> 
+    </div>
+  </div>
+
+  <input [(ngModel)]="tipoVivienda" name="tipoVivienda" placeholder="Tipo de Vivienda" required />
+  <input [(ngModel)]="ubicacion" name="ubicacion" placeholder="Ubicación" required />
+  <input [(ngModel)]="vista" name="vista" placeholder="Vista" required />
+
+  <label for="foto1">Foto 1</label>
+  <input [(ngModel)]="fotosVivienda[0]" name="foto1" placeholder="URL de la Foto 1" required />
+
+  <label for="foto2">Foto 2</label>
+  <input [(ngModel)]="fotosVivienda[1]" name="foto2" placeholder="URL de la Foto 2" required />
+
+  <label for="foto3">Foto 3</label>
+  <input [(ngModel)]="fotosVivienda[2]" name="foto3" placeholder="URL de la Foto 3" required />
+
+  <label for="foto4">Foto 4</label>
+  <input [(ngModel)]="fotosVivienda[3]" name="foto4" placeholder="URL de la Foto 4" required />
+
+  <button type="submit">Registrar Vivienda</button>
+</form>
+
+@if (mensaje) {
+  <h3 class="mensaje">{{mensaje}}</h3>
+}
+

@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reserva-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reserva-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.reserva-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.reserva-card p {
+  color: #555;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.reserva-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.reserva-card button:hover {
+  background-color: #0056b3;
+}
+
+.reserva-card button.cancel {
+  background-color: #dc3545;
+}
+
+.reserva-card button.cancel:hover {
+  background-color: #c82333;
+}
+
+.form-opinion {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.form-opinion label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-opinion input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-opinion button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.form-opinion button:hover {
+  background-color: #218838;
+}
+
+.mensaje {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #28a745; /* Verde oscuro */
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 2px dashed #28a745; /* Verde oscuro */
+  border-radius: 8px;
+  background-color: #e8f5e9; /* Verde claro */
+}

@@ -1,0 +1,29 @@
+
+<div class="reserva-container">
+    @for (reserva of reservas; track $index) {
+        <div class="reserva-card" (click)="verVivienda(reserva.vivienda.idVivienda)">
+            <img src="../../../assets/img/{{reserva.vivienda.fotosVivienda.foto1}}" alt="Imagen de la vivienda">
+            <p>Ubicación: {{reserva.vivienda.ubicacion}}</p>
+            <p>Fecha entrada: {{reserva.fechaEntrada}}</p>
+            <p>Fecha salida: {{reserva.fechaSalida}}</p>
+            <p>Precio por noche: {{reserva.precioNoche}}€</p>
+            <p>Personas: {{reserva.personas}}</p>
+            <button (click)="modalFormOpinion(reserva.idAlquiler); $event.stopPropagation()">Valora la vivienda</button>
+            <button class="cancel" (click)="cancelarReserva(reserva.idAlquiler); $event.stopPropagation()">Cancelar reserva</button>
+        </div>
+        @if (activeForm === reserva.idAlquiler) {
+            <div class="form-opinion">
+                <label for="valoracion">Valoración</label>
+                <input type="number" [(ngModel)]="valoracion" id="valoracion">
+                <label for="comentario">Deja tu comentario</label>
+                <input type="text" [(ngModel)]="comentario" id="comentario">
+                <button (click)="addOpinion(reserva.vivienda.idVivienda)">Valora la vivienda</button>
+            </div>
+        }
+    }
+</div>
+
+@if (mensaje) {
+    <p class="mensaje">{{mensaje}}</p>
+}
+

@@ -1,0 +1,44 @@
+<!-- <form>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="User">
+        <label for="floatingPassword">User</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Name">
+        <label for="floatingPassword">Name</label>
+      </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+  </form> -->
+
+  <form (ngSubmit)="register()">
+    <input [(ngModel)]="username" name="username" placeholder="Username" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required />
+    <input [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required />
+    <input [(ngModel)]="apellidos" name="apellidos" placeholder="Apellidos" required />
+    <input [(ngModel)]="dni" name="dni" placeholder="DNI" required />
+    <input [(ngModel)]="email" name="email" type="email" placeholder="Email" required />
+    <input [(ngModel)]="numeroTelefono" name="numeroTelefono" placeholder="Número de Teléfono" required />
+    <input [(ngModel)]="fechaNacimiento" name="fechaNacimiento" type="date" placeholder="Fecha Nacimiento" required />
+    <select [(ngModel)]="tipoUsuario" name="tipoUsuario" required>
+      <option value="" disabled selected>Tipo Usuario</option>
+      <option value="propietario">Propietario</option>
+      <option value="cliente">Cliente</option>
+    </select>
+    <button type="submit">Register</button>
+    @if (errorMessage) {
+      <div class="error-message">
+        {{ errorMessage }}
+      </div>
+    }
+  </form>
+  
+  

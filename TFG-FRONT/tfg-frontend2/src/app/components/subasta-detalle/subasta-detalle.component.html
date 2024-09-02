@@ -1,0 +1,179 @@
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{subasta?.vivienda?.fotosVivienda?.foto1}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{subasta?.vivienda?.fotosVivienda?.foto2}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{subasta?.vivienda?.fotosVivienda?.foto3}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{subasta?.vivienda?.fotosVivienda?.foto4}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="containerDatos">
+  <div class="datosSubasta">
+    <div class="atrSubasta" >
+      <div class="atrSubasta-item">
+        <span class="atr-label">Id subasta:</span>
+        <span>{{subasta?.idSubasta}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Fecha inicio:</span>
+        <span>{{subasta?.fechaInicio}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Fecha fin:</span>
+        <span>{{subasta?.fechaFin}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Precio inicial:</span>
+        <span>{{subasta?.precioInicial}}€</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Tiempo restante:</span>
+        <span>{{dias}} Días {{horas}} Horas {{minutos}} Minutos {{segundos}} Segundos</span>
+      </div>
+    </div>
+    <div class="atrSubasta">
+      <div class="atrSubasta-item">
+        <span class="atr-label">PUJA MÁS ALTA</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Nombre del usuario:</span>
+        <span>{{pujaMasAlta?.usuario?.nombre}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Valor de la puja:</span>
+        <span>{{pujaMasAlta?.valorPuja}}€</span>
+      </div>
+      @if (isLoggedIn) {
+        <button class="btn btn-primary" (click)="cambioModalPuja()">Pujar</button>
+      }
+    </div>
+  </div>
+  <div class="atrSubasta">
+      <div class="atrSubasta-item">
+        <span class="atr-label">DATOS VIVIENDA</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Descripción:</span>
+        <span>{{subasta?.vivienda?.descripcion}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Fecha de construcción:</span>
+        <span>{{subasta?.vivienda?.fechaConstruccion}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Ubicación:</span>
+        <span>{{subasta?.vivienda?.ubicacion}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Tamaño:</span>
+        <span>{{subasta?.vivienda?.extension}} m²</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Habitaciones:</span>
+        <span>{{subasta?.vivienda?.habitaciones}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Baños:</span>
+        <span>{{subasta?.vivienda?.aseos}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Baños privados:</span>
+        <span>{{subasta?.vivienda?.aseosHabitacion}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Tipo de vivienda:</span>
+        <span>{{subasta?.vivienda?.tipoVivienda}}</span>
+      </div>
+      <div class="atrSubasta-item">
+        <span class="atr-label">Vista:</span>
+        <span>{{subasta?.vivienda?.vista}}</span>
+      </div>
+  </div> 
+</div>
+@if (modalPuja) {
+  <div class="formPuja">
+      <form (ngSubmit)="crearPuja(subasta?.idSubasta!)">
+        <div class="datosPuja">
+          <input type="number" name="valorPuja" placeholder="Valor de la puja (€)" [(ngModel)]="valorPuja">
+        </div>
+        <div class="botonPuja">
+          <button class="btn btn-primary" type="submit">Crear puja</button>
+        </div>
+      </form>
+      <div>
+        @if (mensaje) {
+          <p class="mensaje">{{mensaje}}</p>
+        }
+      </div>
+  </div>
+}
+@if (isLoggedIn) {
+  <div class="containerPujas">
+    <div class="divTitulo">
+      <span class="atr-label">ÚLTIMAS PUJAS</span>
+    </div>
+    <div class="divPuja">
+      @for (puja of pujas; track $index) {
+        <div class="atrSubasta">
+          <div class="atr-label">
+            <span class="atr-label">Nombre del usuario:</span>
+            <span>{{puja.usuario.nombre}}</span>
+          </div>
+          <div class="atr-label">
+            <span class="atr-label">Valor de la puja:</span>
+            <span>{{puja.valorPuja}}€</span>
+          </div>
+          <div class="atr-label">
+            <span class="atr-label">Estado de la puja:</span>
+            <span>{{puja.estadoPuja}}</span>
+          </div>
+      </div>
+      }
+    </div>
+  </div>
+}
+
+
+

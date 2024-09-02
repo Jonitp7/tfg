@@ -1,0 +1,11 @@
+<div class="container">
+    @for (puja of pujas; track $index) {
+        <div (click)="verSubasta(puja.subasta.vivienda.idVivienda)" class="card-puja">
+            <h3>Id puja: {{puja.idPuja}}</h3>
+            <h3>Valor de la puja: {{puja.valorPuja}}€</h3> 
+            <h3>Id subasta: {{puja.subasta.idSubasta}}</h3>
+            <h3>Estado subasta: {{puja.subasta.estadoSubasta}}</h3>
+        </div>
+    }
+</div>
+

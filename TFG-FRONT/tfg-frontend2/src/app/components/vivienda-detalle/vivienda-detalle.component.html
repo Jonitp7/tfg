@@ -1,0 +1,202 @@
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{vivienda?.fotosVivienda?.foto1}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{vivienda?.fotosVivienda?.foto2}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{vivienda?.fotosVivienda?.foto3}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <img src="../../../assets/img/{{vivienda?.fotosVivienda?.foto4}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="contenedor">
+  <!-- <div class="atrVivienda">
+    <h3>Descripción:{{vivienda?.descripcion}}</h3>
+    <h3>SPA:{{(vivienda?.spa == 1) ? "Sí" : "No"}}</h3>
+    <h3>Garaje:{{(vivienda?.garaje == 1) ? "Sí" : "No"}}</h3>
+    <h3>Golf:{{(vivienda?.golf == 1) ? "Sí" : "No"}}</h3>
+    <h3>Golf:{{(vivienda?.jardin == 1) ? "Sí" : "No"}}</h3>
+    <h3>Piscina:{{(vivienda?.piscina == 1) ? "Sí" : "No"}}</h3>
+    <h3>Plantas:{{vivienda?.plantas}}</h3>
+    <h3>Aseos:{{vivienda?.aseos}}</h3>
+    <h3>Habitaciones:{{vivienda?.habitaciones}}</h3>
+    <h3>Extensión:{{vivienda?.extension}}</h3>
+    <h3>Vistas:{{vivienda?.vista}}</h3>
+    <h3>Precio noche: {{precioNoche}}€ / Noche</h3>
+  </div> -->
+  <div class="atrVivienda">
+    <div class="atrVivienda-item">
+      <span class="atr-label">Descripción:</span>
+      <span>{{vivienda?.descripcion}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">SPA:</span>
+      <span>{{(vivienda?.spa == 1) ? "Sí" : "No"}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Garaje:</span>
+      <span>{{(vivienda?.garaje == 1) ? "Sí" : "No"}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Golf:</span>
+      <span>{{(vivienda?.golf == 1) ? "Sí" : "No"}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Jardín:</span>
+      <span>{{(vivienda?.jardin == 1) ? "Sí" : "No"}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Piscina:</span>
+      <span>{{(vivienda?.piscina == 1) ? "Sí" : "No"}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Plantas:</span>
+      <span>{{vivienda?.plantas}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Aseos:</span>
+      <span>{{vivienda?.aseos}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Habitaciones:</span>
+      <span>{{vivienda?.habitaciones}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Tamaño:</span>
+      <span>{{vivienda?.extension}} m²</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Vistas:</span>
+      <span>{{vivienda?.vista}}</span>
+    </div>
+    <div class="atrVivienda-item">
+      <span class="atr-label">Precio noche:</span>
+      <span>{{precioNoche}}€ / Noche</span>
+    </div>
+  </div>
+
+  <div class="botonesDetalle">  
+@if (isLoggedIn) {
+
+    @if (!esFavorito) {
+        <button (click)="addFavorito(vivienda?.idVivienda)">Añadir favorito</button>
+    } @else if (esFavorito) {
+        <button (click)="deleteFavorito(idFavorito)">Eliminar favorito</button>
+    }
+    <button (click)="verOpiniones()">Ver opiniones</button>
+    <button (click)="verDisponibilidad()">Ver disponibilidad</button>
+    <button (click)="verModal()">Reservar</button>
+
+    @if (modalReserva) {
+      <div class="modalReservar">
+        <div class="fechas">
+        <label for="fechaEntrada">Fecha de entrada</label>
+        <input type="date" name="fechaEntrada" id="fechaEntrada" (change)="calcularPrecioTotal()" [(ngModel)]="fechaEntrada">
+        <label for="fechaSalida">Fecha de salida</label>
+        <input type="date" name="fechaSalida" id="fechaSalida" (change)="calcularPrecioTotal()" [(ngModel)]="fechaSalida">
+        </div>
+        <div class="divContador">
+            <label for="contador">Personas:</label>
+            <button (click)="decrement(); calcularPrecioTotal()">-</button>
+            <span id="contador">{{ contador }}</span>
+            <button (click)="increment(); calcularPrecioTotal()">+</button>
+          </div>
+          <div class="botonesModal">
+            <button (click)="confirmarReserva()">Confirmar reserva</button>
+            <button (click)="verModal()">Cerrar</button>
+          </div>
+          <div>
+            @if (mensaje) {
+              <p class="mensaje">{{mensaje}}</p>
+            }
+          </div>
+      </div>
+    }
+    @if (modalConfirmarReserva) {
+      <div class="modalReservar">
+        <h3>¿Seguro que quieres confirmar tu reserva?</h3>
+        <h3>Personas: {{contador}}</h3>
+        <h3>Precio total: {{precioTotal}}€</h3>
+        <div class="botonesModal">
+          <button (click)="reservar()">Confirmar reserva</button>
+          <button (click)="cancelar()">Cancelar</button>
+        </div>
+      </div>
+      
+    }
+}
+</div>
+@if (calendario == true) {
+    <div id="calendario">
+        <app-calendario/>
+    </div>   
+}
+
+@if (modalOpiniones) {
+  <div class="divContenedorOpiniones">
+    @if (opiniones.length>0) {
+        @for (opinion of opiniones; track $index) {
+          <div class="divOpiniones">
+            <h3>{{opinion.fechaOpinion}}</h3>
+            <h3>{{opinion.usuario.nombre}}</h3>
+            <h3>{{opinion.comentario}}</h3>
+            <h3>Valoracion: {{opinion.valoracion}}</h3>
+          </div>
+        }
+    } @else {
+      <div class="divOpiniones">
+        <h3>No hay opiniones</h3>
+      </div>
+      
+    }
+  </div>
+}
+
+@if (mensajeReserva) {
+    <p class="mensajeReserva">{{mensajeReserva}}</p>
+}
+</div>
+
+
+

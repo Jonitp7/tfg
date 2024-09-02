@@ -1,0 +1,25 @@
+/* Aseguramos que el contenedor principal ocupe toda la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Establecemos que el contenedor de la aplicación use flexbox */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos la altura de la pantalla */
+  }
+  
+  /* El contenido debe crecer y ocupar el espacio disponible */
+  .content {
+    flex: 1;
+  }
+  
+  /* Opcional: estilos básicos para el footer */
+  app-footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+  }
+  

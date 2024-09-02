@@ -1,0 +1,65 @@
+
+
+<div class="button-container">
+    <button (click)="cambiarOpcion(1)">Mis viviendas</button>
+    <button (click)="cambiarOpcion(2)">Solicitudes de registro</button>
+</div>
+
+@if (opcionElegida == 1) {
+    @if (viviendas.length == 0) {
+        <div class="no-solicitudes-message">
+            <p>No tienes viviendas registradas</p>
+        </div>
+    } @else {
+        <div class="items-container">
+            @for (vivienda of viviendas; track $index) {
+                <div class="item">
+                    <button class="view-opinions" (click)="loadOpiniones(vivienda.idVivienda)">Ver opiniones</button>
+                    <img src="../../../assets/img/{{vivienda.fotosVivienda.foto1}}" alt="Imagen de la vivienda">
+                    
+                    <p>Descripción de la vivienda: {{vivienda.descripcion}}</p>
+                    <p>Fecha de alta: {{vivienda.fechaAltaVivienda}}</p>
+                    <p>Tamaño: {{vivienda.extension}} m²</p>
+                    <p>Ubicación: {{vivienda.ubicacion}}</p>
+                </div>
+            }
+        </div>
+    }
+    @if (modalOpiniones) {
+        @if (opiniones.length == 0) {
+            <div class="items-container">
+                <div class="item">
+                    <p>No hay ninguna opinión</p>
+
+                </div>
+            </div>
+        } @else {
+            <div class="items-container">
+                @for (opinion of opiniones; track $index) {
+                    <div class="item">
+                        <p>Usuario: {{opinion.usuario.nombre}}</p>
+                        <p>Fecha: {{opinion.fechaOpinion}}</p>
+                        <p>Comentario: {{opinion.comentario}}</p>
+                    </div>
+                }
+            </div>
+        }
+    }
+} @else if (opcionElegida == 2) {
+    @if (solicitudes.length > 0) {
+        <div class="items-container">
+            @for (solicitud of solicitudes; track $index) {
+                <div class="item">
+                    <p>Id solicitud: {{solicitud.idSolicitud}}</p>
+                    <p>Estado solicitud: {{solicitud.estadoSolicitud}}</p>
+                    <p>Fecha solicitud: {{solicitud.fecha}}</p>
+                </div>
+            }
+        </div>
+    } @else {
+        <div class="no-solicitudes-message">
+            <p>No hay solicitudes</p>
+        </div>
+    }
+}
+

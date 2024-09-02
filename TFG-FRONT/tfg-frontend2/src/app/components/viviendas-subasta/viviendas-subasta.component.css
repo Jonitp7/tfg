@@ -1,0 +1,81 @@
+#divSubastas{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+#subastas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#menNoSubastas {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#divSubastas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.divSubasta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: 1px solid rgb(51, 51, 108);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.divSubasta:hover {
+    cursor: pointer;
+    background-color: rgb(245, 245, 255);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.divSubasta .img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.divSubasta .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.divSubasta:hover .img img {
+    transform: scale(1.05);
+}
+
+.dataSubasta {
+    width: 100%;
+    text-align: center;
+}
+
+.dataSubasta p {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+
+#misPujas{
+    display: flex;
+    justify-content: center;
+}
